@@ -1,0 +1,4 @@
+type FormatLangPair {
+    language: String,
+    format: String
+    }

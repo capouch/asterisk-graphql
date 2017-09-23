@@ -1,0 +1,87 @@
+let ari = require('ari-client')
+let Promise = require('bluebird')
+
+var mySounds = []
+var oneSound = {}
+var PromiseData
+
+const resolvers = {
+  Query: {
+    sounds: () => {
+
+      // var ret = null
+      // Non-working variant--does ari.connect return a promise?
+      PromiseData = () => {
+      return new Promise((resolve, reject) => {
+      ari.connect('http://knuckle.palaver.net:8088', 'brianc', 'getmeoutofhere')
+      .then (function (client) {
+        client.sounds.list()
+        .then (function (sounds) {
+          // console.log('Got some sounds ' + sounds)
+          // mySounds = sounds
+          resolve(sounds)
+        })
+        .catch(function (err) {
+          console.log('Error in sounds query ' + err)
+          })
+        })
+      })
+    }
+    return PromiseData
+    },
+
+      /*
+      // working variant
+      console.log("We are really here")
+      let retObject = [
+        {
+          _id: "23443",
+          text: "Some text for my sound",
+        },
+        {
+          _id: "234234",
+          text: "More soundy textys",
+        }
+      ]
+      return retObject
+      },
+      */
+
+    getSound: (_, { id } ) => {
+      /*
+      return ari.connect('http://knuckle.palaver.net:8088', 'brianc', 'getmeoutofhere')
+        .then (function(client) {
+            client.sounds.get({ soundId: id })
+            .then (function(sound) {
+              console.log('So far, so good: ' + sound.id + " " + sound.text)
+              return sound
+            })
+            .catch(function(err){
+              console.log('No sounds currently :-(' + err)
+            })
+          })
+        .catch(function(err){
+          console.log('Error ' + err)
+        })
+  },
+},
+*/
+
+      return {
+        _id: "23432",
+        text: "Some demonstrative text",
+      }
+    },
+  },
+
+  Sound: {
+    formats(sound) {
+      return [
+          {language: "EN", format: "gsm"},
+          {language: "ES", format: "wav"}
+        ];
+      },
+  },
+}
+
+export default resolvers;

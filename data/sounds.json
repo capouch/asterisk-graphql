@@ -1,0 +1,137 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2.0.0",
+    "title": "Swagger API",
+    "license": {
+      "name": "MIT",
+      "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+    }
+  },
+  "host": "localhost:8088",
+  "basePath": "/ari",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/sounds": {
+      "get": {
+        "description": "List all sounds.",
+        "summary": "list",
+        "operationId": "list",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Lookup sound for a specific language."
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Lookup sound in a specific format."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/sounds/{soundId}": {
+      "get": {
+        "description": "Get a sound's details.",
+        "summary": "get",
+        "operationId": "get",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "soundId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Sound's id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
+  },
+  "definitions": {
+    "FormatLangPair": {
+      "title": "FormatLangPair",
+      "description": "Identifies the format and language of a sound file",
+      "type": "object",
+      "properties": {
+        "language": {
+          "description": "",
+          "type": "string"
+        },
+        "format": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "Sound": {
+      "title": "Sound",
+      "description": "A media file that may be played back.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Sound's identifier.",
+          "type": "string"
+        },
+        "text": {
+          "description": "Text description of the sound, usually the words spoken.",
+          "type": "string"
+        },
+        "formats": {
+          "description": "The formats and languages in which this sound is available.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
