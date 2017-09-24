@@ -1,8 +1,8 @@
-// Example "auto-generated" schema
-// This is the output of swagger-to-graphql
+# Example "auto-generated" schema
+# This is the output of swagger-to-graphql
 
-// Began with the channels.json file from Asterisk source
-// Converted from Swagger v1 to Swagger v2 with api-spec-converter
+# Began with the channels.json file from Asterisk source
+# Converted from Swagger v1 to Swagger v2 with api-spec-converter
 
 type answer {
   # default field

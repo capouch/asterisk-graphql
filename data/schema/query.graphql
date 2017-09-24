@@ -1,4 +1,4 @@
-// Only queries in this schema, no mutations
+# Only queries in this schema, no mutations
 type Query {
   sounds: [Sound],
   getSound(id: String!): Sound,

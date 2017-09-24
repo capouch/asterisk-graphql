@@ -1,5 +1,3 @@
-// nodemon should be installed globally
-
 {
   "verbose": false,
   "ignore": ["node_modules"],

@@ -1,5 +1,4 @@
-// Pretty much straight from the apollo-tutorial kit
-
+// Pretty much verbatim from apollo-tutorial-kit
 import express from 'express';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
