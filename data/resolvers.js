@@ -7,7 +7,7 @@ const resolvers = {
     .then (function (client) {
         return client.sounds.list()
         .then (function (_sounds) {
-          console.log('Got some sounds ' + _sounds)
+          // console.log('Got some sounds ' + _sounds)
           return _sounds
         })
         .catch(function (err) {
@@ -40,10 +40,8 @@ const resolvers = {
 
   Sound: {
     formats(sound) {
-      return [
-          {language: "EN", format: "gsm"},
-          {language: "ES", format: "wav"}
-        ];
+      console.log('In Sound resolver')
+      return sound.formats
       },
   },
 }
