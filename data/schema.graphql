@@ -1,8 +1,0 @@
-# this is the query description
-type Query {
-  testString: String
-}
-
-schema {
-  query: Query
-}

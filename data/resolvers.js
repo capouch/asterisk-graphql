@@ -29,6 +29,8 @@ const resolvers = {
   getSound: (_, { id } ) => {
     return ari.connect('http://knuckle.palaver.net:8088', 'brianc', 'getmeoutofhere')
     .then (function(client) {
+
+      // Fetch a single sound from the ARI interface
       return client.sounds.get({ soundId: id })
       .then (function(_sound) {
         // console.log('So far, so good: ' + _sound.id + " " + _sound.text + " " + JSON.stringify(_sound.formats))
