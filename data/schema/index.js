@@ -1,8 +1,9 @@
 // Import schema definition
 import SchemaDefinition from './schemaDefinition.graphql';
 
-// Import query
+// Import query, no mutations yet
 import Query from './query.graphql';
+// import Mutation from './mutation.graphql'
 
 // Import types
 import Sound from './sounds.graphql';

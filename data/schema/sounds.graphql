@@ -1,3 +1,4 @@
+// Adapted from the Swagger API definition in sounds.json
 type Sound {
   id: String,
   text: String,
