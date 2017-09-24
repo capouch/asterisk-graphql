@@ -5,8 +5,6 @@ import * as bodyParser from 'body-parser';
 import schema from './data/schema'
 import resolvers from './data/resolvers.js'
 
-import Mocks from './data/mocks';
-
 const GRAPHQL_PORT = 8080;
 
 const graphQLServer = express();
