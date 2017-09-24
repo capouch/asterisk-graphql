@@ -1,3 +1,5 @@
+// Pretty much straight from the apollo-tutorial kit
+
 import express from 'express';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
@@ -13,12 +15,6 @@ const executableSchema = makeExecutableSchema({
   typeDefs: schema,
   resolvers,
 });
-
-//addMockFunctionsToSchema({
-//  schema: executableSchema,
-//  mocks: Mocks,
-//  preserveResolvers: true,
-//});
 
 graphQLServer.use(bodyParser.urlencoded({ extended: true }));
 graphQLServer.use(bodyParser.json());

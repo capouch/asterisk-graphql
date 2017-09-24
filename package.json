@@ -1,7 +1,7 @@
 {
-  "name": "apollo-starter-kit",
+  "name": "asterisk-graphql demo",
   "version": "0.1.0",
-  "description": "Minimal set of code to write a GraphQL server with Apollo graphql-tools",
+  "description": "Adapted from the apollo-tutorial-kit",
   "scripts": {
     "start": "nodemon ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CaveOfCodeBlog/apollo-starter-kit.git"
+    "url": "git+https://github.com/capouch/asterisk-graphql"
   },
   "keywords": [
     "Node.js",
@@ -19,12 +19,12 @@
     "Apollo",
     "Meteor"
   ],
-  "author": "Jonas Helfer <jonas@helfer.email>, Jesper O. Christensen <https://github.com/Karnich>",
+  "author": "Jonas Helfer <jonas@helfer.email>, Jesper O. Christensen <https://github.com/Karnich>, modified by Brian Capouch <mailto:brianc@palaver.net>",
   "license": "MIT",
   "bugs": {
-    "url": "git+https://github.com/CaveOfCodeBlog/apollo-starter-kit/issues"
+    "url": "git+https://github.com/capouch/asterisk-graphql/issues"
   },
-  "homepage": "https://github.com/CaveOfCodeBlog/apollo-starter-kit#readme",
+  "homepage": "https://github.com/capouch/asterisk-graphql#readme",
   "dependencies": {
     "ari-client": "^1.1.1",
     "body-parser": "1.15.2",
