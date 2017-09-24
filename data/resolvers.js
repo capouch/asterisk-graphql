@@ -12,7 +12,7 @@ const resolvers = {
   sounds: () => {
 
     // Connect to Asterisk ARI interface
-    return ari.connect('http://knuckle.palaver.net:8088', 'brianc', 'getmeoutofhere')
+    return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
     .then (function (client) {
 
       // Use client handle to fetch list of sounds
@@ -32,7 +32,7 @@ const resolvers = {
 
   // Fetch a single sound from the ARI interface
   getSound: (_, { id } ) => {
-    return ari.connect('http://knuckle.palaver.net:8088', 'brianc', 'getmeoutofhere')
+    return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
     .then (function(client) {
 
       // Fetch a single sound from the ARI interface
