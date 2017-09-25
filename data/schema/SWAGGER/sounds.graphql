@@ -1,0 +1,22 @@
+type get {
+  # default field
+  empty: String
+}
+
+type list {
+  # default field
+  empty: String
+}
+
+type Query {
+  viewer: viewer
+}
+
+type viewer {
+  # List all sounds.
+  list(lang: String, format: String): list
+
+  # Get a sound's details.
+  get(soundId: String): get
+}
+

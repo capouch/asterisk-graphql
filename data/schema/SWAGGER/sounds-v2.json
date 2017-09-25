@@ -1,0 +1,111 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "localhost:8088",
+    "version": "2.0.0"
+  },
+  "host": "localhost:8088",
+  "basePath": "/ari",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/sounds": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Lookup sound for a specific language.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Lookup sound in a specific format.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/Sound"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "operationId": "list",
+        "summary": "List all sounds."
+      }
+    },
+    "/sounds/{soundId}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Sound's id",
+            "in": "path",
+            "name": "soundId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "$ref": "#/definitions/Sound"
+            }
+          }
+        },
+        "operationId": "get",
+        "summary": "Get a sound's details."
+      }
+    }
+  },
+  "definitions": {
+    "FormatLangPair": {
+      "description": "Identifies the format and language of a sound file",
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "format",
+        "language"
+      ]
+    },
+    "Sound": {
+      "description": "A media file that may be played back.",
+      "properties": {
+        "formats": {
+          "description": "The formats and languages in which this sound is available.",
+          "items": {
+            "$ref": "#/definitions/FormatLangPair"
+          },
+          "type": "array"
+        },
+        "id": {
+          "description": "Sound's identifier.",
+          "type": "string"
+        },
+        "text": {
+          "description": "Text description of the sound, usually the words spoken.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "formats",
+        "id"
+      ]
+    }
+  }
+}
