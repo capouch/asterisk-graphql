@@ -49,14 +49,54 @@ const resolvers = {
       console.log('Error connecting ' + err)
       })
     },
+
+  mailboxes: () => {
+
+    // Connect to Asterisk ARI interface
+    return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+    .then (function (client) {
+
+      // Use client handle to fetch list of mailboxes
+      return client.mailboxes.list()
+      .then (function (_mailboxes) {
+        return _mailboxes
+      })
+      .catch(function (err) {
+        console.log('Error in mailboxes query ' + err);
+        return err
+      })
+    })
+    .catch(function(err) {
+      console.log('Error connecting: ' + err)
+    })
   },
 
-  // Get format fields for a given sound
-  Sound: {
-    formats(sound) {
-      return sound.formats
-      },
+  // Fetch details for a single mailbox from the ARI interface
+  getMailbox: (_, { mailboxName } ) => {
+    return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+    .then (function(client) {
+
+      // Fetch a single sound from the ARI interface
+      return client.mailboxes.get( { mailboxName: mailboxName } )
+      .then (function(_mailbox) {
+        // console.log('So far, so good: ' + _sound.id + " " + _sound.text + " " + JSON.stringify(_sound.formats))
+        return _mailbox
+      })
+      .catch(function(err){
+        console.log('No mailboxes currently :-(' + err)
+        })
+      })
+    .catch(function(err){
+      console.log('Error connecting ' + err)
+      })
+    },
   },
+// Get format fields for a given sound
+Sound: {
+  formats(sound) {
+    return sound.formats
+    },
+  }
 }
 
 export default resolvers;

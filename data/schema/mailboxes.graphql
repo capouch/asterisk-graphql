@@ -1,0 +1,6 @@
+# Adapted from the Swagger API definition in mailboxes.json
+type Mailbox {
+  name: String,
+  old_messages: String,
+  new_messages: String,
+}

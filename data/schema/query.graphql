@@ -2,4 +2,6 @@
 type Query {
   sounds: [Sound],
   getSound(id: String!): Sound,
+  mailboxes: [Mailbox],
+  getMailbox(mailboxName: String!): Mailbox
 }

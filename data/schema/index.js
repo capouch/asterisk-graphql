@@ -6,8 +6,11 @@ import Query from './query.graphql';
 // import Mutation from './mutation.graphql'
 
 // Import types
-import Sound from './sounds.graphql';
-import FormatLangPair from './FormatLangPair.graphql';
+import Sound from './sounds.graphql'
+import FormatLangPair from './FormatLangPair.graphql'
+
+import Mailbox from './mailboxes.graphql'
+
 
 // Expose the whole set
-export default [SchemaDefinition, Query, Sound, FormatLangPair];
+export default [SchemaDefinition, Query, Sound, FormatLangPair, Mailbox];
