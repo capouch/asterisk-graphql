@@ -4,7 +4,6 @@
 //
 
 let ari = require('ari-client')
-let querystring = require('querystring')
 
 const resolvers = {
   Query: {
