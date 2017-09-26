@@ -8,6 +8,7 @@ import Query from './query.graphql';
 // Import types
 import Sound from './sounds.graphql';
 import FormatLangPair from './FormatLangPair.graphql';
+import Playbacks from './playbacks.graphql'
 
 // Expose the whole set
-export default [SchemaDefinition, Query, Sound, FormatLangPair];
+export default [SchemaDefinition, Query, Sound, FormatLangPair, Playbacks];

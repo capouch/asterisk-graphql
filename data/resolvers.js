@@ -30,6 +30,22 @@ const resolvers = {
     })
   },
 
+  playbacks: (_, { playbackID }) => {
+    return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+    .then(function(client) {
+      return client.playbacks.get( { playbackID: playbackID})
+      .then (function (_playback) {
+        return _playback
+      })
+      .catch(function(err){
+        console.log('No playbacks currently :-(' + err)
+        })
+      })
+  .catch(function(err){
+    console.log('Error connecting ' + err)
+    })
+  },
+
   // Fetch a single sound from the ARI interface
   getSound: (_, { id } ) => {
     return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')

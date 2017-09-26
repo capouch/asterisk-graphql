@@ -1,0 +1,22 @@
+enum CONTROL_VALUES {
+  RESTART,
+  PAUSE,
+  UNPAUSE,
+  REVERSE,
+  FORWARD
+}
+
+enum PLAYBACK_STATE {
+  QUEUED,
+  PLAYING,
+  COMPLETE,
+}
+
+type Playback {
+  id: String,
+  language: String,
+  media_uri: String,
+  next_media_uri: String,
+  target_uri: String,
+  state: PLAYBACK_STATE,
+}
