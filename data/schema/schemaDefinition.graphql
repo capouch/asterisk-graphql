@@ -1,4 +1,5 @@
-# Starting point for graphQL schema 
+# Starting point for graphQL schema
 schema {
-  query: Query
+  query: Query,
+  mutation: Mutation
 }

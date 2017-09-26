@@ -1,0 +1,12 @@
+enum ENDPOINT_STATE {
+  UNKNOWN,
+  OFFLINE,
+  ONLINE,
+},
+
+type Endpoint {
+  resource: String,
+  state: String,
+  technology: String,
+  channel_ids: [String],
+}

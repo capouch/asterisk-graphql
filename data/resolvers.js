@@ -4,6 +4,7 @@
 //
 
 let ari = require('ari-client')
+let querystring = require('querystring')
 
 const resolvers = {
   Query: {
@@ -49,6 +50,49 @@ const resolvers = {
       console.log('Error connecting ' + err)
       })
     },
+
+    // Expose part of the endpoints API
+    endpoints: () => {
+
+      // Connect to Asterisk ARI interface
+      return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+      .then (function (client) {
+
+        // Use client handle to fetch list of sounds
+        return client.endpoints.list()
+        .then (function (_endpoints) {
+          return _endpoints
+        })
+        .catch(function (err) {
+          console.log('Error in endpoints query ' + err);
+          return err
+        })
+      })
+      .catch(function(err) {
+        console.log('Error connecting: ' + err)
+      })
+    },
+  },
+  Mutation: {
+    sendMessage: ( _, { to, from, body } ) => {
+      console.log('Got parm of body as: ' + body)
+      return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+      .then (function(client) {
+
+        // Here is a horible kludge!!  See https://github.com/asterisk/node-ari-client/issues/30
+        let variables = { "body":body, "variables": {"Event":"myowneventname"} }
+        return client.endpoints.sendMessage( { to: to, from: from, variables: variables } )
+        .then (function() {
+          return "Message sent"
+        })
+        .catch(function(err){
+          console.log('Cannot send message!! :-(' + err)
+          })
+        })
+      .catch(function(err){
+        console.log('Error connecting ' + err)
+        })
+      },
   },
 
   // Get format fields for a given sound
