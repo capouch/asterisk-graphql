@@ -49,6 +49,28 @@ const resolvers = {
       console.log('Error connecting ' + err)
       })
     },
+
+    // Expose part of the endpoints API
+    endpoints: () => {
+
+      // Connect to Asterisk ARI interface
+      return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+      .then (function (client) {
+
+        // Use client handle to fetch list of sounds
+        return client.endpoints.list()
+        .then (function (_endpoints) {
+          return _endpoints
+        })
+        .catch(function (err) {
+          console.log('Error in endpoints query ' + err);
+          return err
+        })
+      })
+      .catch(function(err) {
+        console.log('Error connecting: ' + err)
+      })
+    },
   },
 
   // Get format fields for a given sound

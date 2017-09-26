@@ -5,9 +5,11 @@ import SchemaDefinition from './schemaDefinition.graphql';
 import Query from './query.graphql';
 // import Mutation from './mutation.graphql'
 
-// Import types
+// Import types for API
 import Sound from './sounds.graphql';
 import FormatLangPair from './FormatLangPair.graphql';
 
+import Endpoint from './endpoints.graphql'
+
 // Expose the whole set
-export default [SchemaDefinition, Query, Sound, FormatLangPair];
+export default [SchemaDefinition, Query, Sound, FormatLangPair, Endpoint];
