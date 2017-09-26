@@ -80,7 +80,7 @@ const resolvers = {
       .then (function(client) {
 
         // Here is a horible kludge!!  See https://github.com/asterisk/node-ari-client/issues/30
-        let variables = { "body":body, "variables": {"Event":"myowneventname"} }
+        let variables = { "body":body, "variables": {"Event":"somepointlessname"} }
         return client.endpoints.sendMessage( { to: to, from: from, variables: variables } )
         .then (function() {
           return "Message sent"
