@@ -1,0 +1,3 @@
+type Mutation {
+  sendMessage(from: String!, to: String!, body: String, variables: String): String 
+}
