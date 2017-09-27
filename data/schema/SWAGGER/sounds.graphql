@@ -1,3 +1,6 @@
+# Automated conversion from Swagger v2 to graphQL
+# Done by swagger-to-graphql
+
 type get {
   # default field
   empty: String
@@ -19,4 +22,3 @@ type viewer {
   # Get a sound's details.
   get(soundId: String): get
 }
-
