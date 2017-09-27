@@ -3,4 +3,5 @@ type Query {
   sounds: [Sound],
   getSound(id: String!): Sound,
   endpoints: [Endpoint],
+  listByTech(tech: String!): [Endpoint]
 }
