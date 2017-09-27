@@ -74,7 +74,7 @@ const resolvers = {
   },
   Mutation: {
     sendMessage: ( _, { to, from, body } ) => {
-      console.log('Got parm of body as: ' + body)
+      // console.log('Got parm of body as: ' + body)
       return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
       .then (function(client) {
 
