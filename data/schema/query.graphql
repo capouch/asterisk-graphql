@@ -1,4 +1,4 @@
-# Only queries in this schema, no mutations
+# Queries upon the sound and endpoint ARI objects
 type Query {
   sounds: [Sound],
   getSound(id: String!): Sound,
