@@ -57,7 +57,7 @@ const resolvers = {
       return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
       .then (function (client) {
 
-        // Use client handle to fetch list of sounds
+        // Use client handle to fetch list of endpoints
         return client.endpoints.list()
         .then (function (_endpoints) {
           return _endpoints
