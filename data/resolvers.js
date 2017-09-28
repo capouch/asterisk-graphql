@@ -97,7 +97,7 @@ const resolvers = {
       return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
       .then (function(client) {
 
-        // Fetch all endpoints for a given technology from the ARI interface
+        // Fetch a single endpoint by id and technology
         return client.endpoints.get({ resource: resource, tech: tech })
         .then (function(_endpoint) {
           // console.log('So far, so good: ' + _sound.id + " " + _sound.text + " " + JSON.stringify(_sound.formats))
