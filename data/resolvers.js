@@ -7,6 +7,7 @@ let ari = require('ari-client')
 
 const resolvers = {
   Query: {
+  // ************  sounds ************
 
   // Get all available sounds
   sounds: () => {
@@ -49,8 +50,9 @@ const resolvers = {
       console.log('Error connecting ' + err)
       })
     },
+    // // ************  endpoints ************
 
-    // Expose part of the endpoints API
+    // Get all endpoints
     endpoints: () => {
 
       // Connect to Asterisk ARI interface
@@ -113,6 +115,7 @@ const resolvers = {
       },
     },
 
+  // Only one mutation in our schema
   Mutation: {
     sendMessage: ( _, { to, from, body } ) => {
       // console.log('Got parm of body as: ' + body)
