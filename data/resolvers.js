@@ -72,7 +72,7 @@ const resolvers = {
       })
     },
 
-  // Expost listByTech from the ari-client library
+  // Expost listByTech from the endpoint resource of the ari-client library
   listByTech: (_, { tech } ) => {
     return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
     .then (function(client) {
@@ -112,6 +112,7 @@ const resolvers = {
         })
       },
     },
+
   Mutation: {
     sendMessage: ( _, { to, from, body } ) => {
       // console.log('Got parm of body as: ' + body)
