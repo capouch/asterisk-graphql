@@ -50,26 +50,6 @@ const resolvers = {
       })
     },
 
-    // Expost listByTech from the ari-client library
-    listByTech: (_, { tech } ) => {
-      return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
-      .then (function(client) {
-
-        // Fetch all endpoints for a given technology from the ARI interface
-        return client.endpoints.listByTech({ tech: tech })
-        .then (function(_endpoints) {
-          // console.log('So far, so good: ' + _sound.id + " " + _sound.text + " " + JSON.stringify(_sound.formats))
-          return _endpoints
-        })
-        .catch(function(err){
-          console.log('No endpoints for that tech' + err)
-          })
-        })
-      .catch(function(err){
-        console.log('Error connecting ' + err)
-        })
-      },
-
     // Expose part of the endpoints API
     endpoints: () => {
 
@@ -91,7 +71,47 @@ const resolvers = {
         console.log('Error connecting: ' + err)
       })
     },
-  },
+
+  // Expost listByTech from the ari-client library
+  listByTech: (_, { tech } ) => {
+    return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+    .then (function(client) {
+
+      // Fetch all endpoints for a given technology from the ARI interface
+      return client.endpoints.listByTech({ tech: tech })
+      .then (function(_endpoints) {
+        // console.log('So far, so good: ' + _sound.id + " " + _sound.text + " " + JSON.stringify(_sound.formats))
+        return _endpoints
+      })
+      .catch(function(err){
+        console.log('No endpoints for that tech' + err)
+        })
+      })
+    .catch(function(err){
+      console.log('Error connecting ' + err)
+      })
+    },
+
+    // Expost get from the endpoint resource of the ari-client library
+    getEndpoint: (_, { resource, tech } ) => {
+      return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+      .then (function(client) {
+
+        // Fetch all endpoints for a given technology from the ARI interface
+        return client.endpoints.get({ resource: resource, tech: tech })
+        .then (function(_endpoint) {
+          // console.log('So far, so good: ' + _sound.id + " " + _sound.text + " " + JSON.stringify(_sound.formats))
+          return _endpoint
+        })
+        .catch(function(err){
+          console.log('No endpoints for that tech' + err)
+          })
+        })
+      .catch(function(err){
+        console.log('Error connecting ' + err)
+        })
+      },
+    },
   Mutation: {
     sendMessage: ( _, { to, from, body } ) => {
       // console.log('Got parm of body as: ' + body)
