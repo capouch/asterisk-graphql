@@ -1,6 +1,12 @@
-# Adapted from the Swagger API definition in sounds.json
+# Asterisk ARI sound API
 type Sound {
+
+  # Unique descriptor for a sound
   id: String,
+
+  # Text description of a sound
   text: String,
+
+  # List of language/format pairs representing individual sound resources
   formats: [ FormatLangPair ]
 }

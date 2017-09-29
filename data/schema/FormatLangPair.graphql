@@ -1,5 +1,9 @@
-# Adapted from the Swagger API file sounds.json
+# Language and format for a sound resource
 type FormatLangPair {
-    language: String,
-    format: String
-    }
+
+  # Language (e.g EN)
+  language: String,
+
+  # Format (e.g. gsm)
+  format: String
+  }

@@ -1,8 +1,18 @@
 # Queries upon the sound and endpoint ARI objects
 type Query {
+
+  # List of all current sounds
   sounds: [Sound],
+
+  # Get sound descriptor given an id
   getSound(id: String!): Sound,
+
+  # List all endpoints
   endpoints: [Endpoint],
+
+  # List all endpoints of a given technology
   listByTech(tech: String!): [Endpoint]
+
+  # Get an endpoint given an id
   getEndpoint(resource: String!, tech: String!): Endpoint,
 }

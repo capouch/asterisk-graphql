@@ -1,4 +1,4 @@
-# Starting point for graphQL schema
+# Generally a schema consists of queries and mutations
 schema {
   query: Query,
   mutation: Mutation
