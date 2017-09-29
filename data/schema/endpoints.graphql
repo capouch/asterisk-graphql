@@ -8,7 +8,7 @@ enum ENDPOINT_STATE {
 # Asterisk ARI endpoint API
 type Endpoint {
 
-  # Resource identifier, e.g. 8000, reception_desk 0a34faa2c602
+  # Resource identifier, e.g. 8000, reception_desk, 0a34faa2c602
   resource: String,
 
   # One of unknown, offline, online
