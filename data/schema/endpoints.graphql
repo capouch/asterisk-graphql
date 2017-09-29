@@ -1,3 +1,4 @@
+# Defined in API, maybe not used?
 enum ENDPOINT_STATE {
   UNKNOWN,
   OFFLINE,
@@ -11,7 +12,7 @@ type Endpoint {
   resource: String,
 
   # One of unknown, offline, online
-  state: ENDPOINT_STATE,
+  state: String,
 
   # One of SIP, JSSIP, XMPP
   technology: String,
