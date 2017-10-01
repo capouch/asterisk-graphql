@@ -1,7 +1,7 @@
 // Pretty much verbatim from apollo-tutorial-kit
 import express from 'express';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
-import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
+import { makeExecutableSchema } from 'graphql-tools';
 import * as bodyParser from 'body-parser';
 import schema from './data/schema'
 import resolvers from './data/resolvers.js'
