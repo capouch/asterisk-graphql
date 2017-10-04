@@ -1,6 +1,6 @@
 //
 // ****************************
-// resolvers.js: Populate graphQL queries from Asterisk ARI fetches
+// resolvers.js: Populate graphQL queries from Asterisk ARI calls
 // ****************************
 //
 // Written by Brian Capouch September/October 2017
