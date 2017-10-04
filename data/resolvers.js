@@ -15,7 +15,8 @@ const resolvers = {
   // Get all available sounds
   sounds: () => {
 
-    // Connect to private Asterisk ARI interface with now-removed credentials
+    // Connect to cloud-based Asterisk ARI interface
+    //   Note: credentials for demo only; you'll need your own server to call
     return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
     .then (function (client) {
 
