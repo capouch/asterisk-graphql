@@ -3,7 +3,7 @@
 // resolvers.js: Populate graphQL queries from Asterisk ARI fetches
 // ****************************
 //
-// Written by Brian Capouch September 2017
+// Written by Brian Capouch September/October 2017
 //
 
 let ari = require('ari-client')
@@ -15,7 +15,7 @@ const resolvers = {
   // Get all available sounds
   sounds: () => {
 
-    // Connect to Asterisk ARI interface
+    // Connect to private Asterisk ARI interface with now-removed credentials
     return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
     .then (function (client) {
 
