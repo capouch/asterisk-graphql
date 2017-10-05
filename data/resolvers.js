@@ -17,7 +17,7 @@ const resolvers = {
 
     // Connect to cloud-based Asterisk ARI interface
     //   Note: credentials for demo only; you'll need your own server to call
-    return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+    return ari.connect('http://astricon.palaver.net:8088', 'astricon', 'dangrous')
     .then (function (client) {
 
       // Use client handle to fetch list of sounds
@@ -37,7 +37,7 @@ const resolvers = {
 
   // Fetch a single sound from the ARI interface
   getSound: (_, { id } ) => {
-    return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+    return ari.connect('http://astricon.palaver.net:8088', 'astricon', 'dangrous')
     .then (function(client) {
 
       // Fetch a single sound from the ARI interface
@@ -60,7 +60,7 @@ const resolvers = {
     endpoints: () => {
 
       // Connect to Asterisk ARI interface
-      return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+      return ari.connect('http://astricon.palaver.net:8088', 'astricon', 'dangrous')
       .then (function (client) {
 
         // Use client handle to fetch list of endpoints
@@ -80,7 +80,7 @@ const resolvers = {
 
   // Expost listByTech from the endpoint resource of the ari-client library
   listByTech: (_, { tech } ) => {
-    return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+    return ari.connect('http://astricon.palaver.net:8088', 'astricon', 'dangrous')
     .then (function(client) {
 
       // Fetch all endpoints for a given technology from the ARI interface
@@ -100,7 +100,7 @@ const resolvers = {
 
     // Expost get from the endpoint resource of the ari-client library
     getEndpoint: (_, { resource, tech } ) => {
-      return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+      return ari.connect('http://astricon.palaver.net:8088', 'astricon', 'dangrous')
       .then (function(client) {
 
         // Fetch a single endpoint by id and technology
@@ -123,7 +123,7 @@ const resolvers = {
   Mutation: {
     sendMessage: ( _, { to, from, body } ) => {
       // console.log('Got parm of body as: ' + body)
-      return ari.connect('http://knuckle.palaver.net:8088', 'astricon', 'dangrous')
+      return ari.connect('http://astricon.palaver.net:8088', 'astricon', 'dangrous')
       .then (function(client) {
 
         // Here is a horible kludge!!  See https://github.com/asterisk/node-ari-client/issues/30
